@@ -12,7 +12,7 @@ These scripts depend on the [darktable-org/lua-scripts](https://github.com/darkt
 
 ```bash
 cd ~/.config/darktable/lua
-git clone https://github.com/hmoens/darktable-utils hmoens
+git clone https://github.com/hmoens/darktable-lua-scripts hmoens
 ```
 
 If you're using script_manager, you'll find a new category hmoens where you can toggle scripts.
