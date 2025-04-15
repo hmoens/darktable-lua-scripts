@@ -184,13 +184,14 @@ local function do_equalize_exposure()
 
     for i, image in ipairs(dt.gui.action_images) do
         local exposure_params = get_current_exposure(image)
-        local ev = compute_ev(image.exif_aperture, image.exif_exposure, image.exif_iso) + exposure_params.exposure
+        local ev = compute_ev(image.exif_aperture, image.exif_exposure, image.exif_iso)
 
         if i == 1 then
-            ref_ev = ev
+            -- We include current exposure adjustment as a part of the reference EV.
+            ref_ev = ev + exposure_params.exposure
         else
             local delta_ev = ref_ev - ev
-            exposure_params.exposure = exposure_params.exposure - delta_ev
+            exposure_params.exposure = delta_ev
             set_exposure(image, exposure_params)
         end
     end
