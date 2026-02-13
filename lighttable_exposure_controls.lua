@@ -74,7 +74,7 @@ local function get_current_exposure(image)
     xmp:close()
 
     local highest_num = -1
-    local latest_params = nil
+    local latest_params = "00000000000000000000000000004842000080c000000000"
 
     -- Match each block containing the exposure operation
     for block in content:gmatch("<rdf:li.-/>") do
